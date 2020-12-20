@@ -17,10 +17,10 @@ class App extends Component {
     name: "max",
   };
 
-  const [meetingResponse, setMeetingResponse] = useState()
-  const [attendeeResponse, setAttendeeResponse] = useState()
-  const [callCreated, setCallCreated] = useState(false)
-  const videoElement = useRef()
+  [meetingResponse, setMeetingResponse] = useState()
+  [attendeeResponse, setAttendeeResponse] = useState()
+  [callCreated, setCallCreated] = useState(false)
+  videoElement = useRef()
   
   /*
   constructor(props) {
