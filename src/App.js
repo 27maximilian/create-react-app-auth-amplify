@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, useRef, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
+
+import axios from 'axios'
+import * as Chime from 'amazon-chime-sdk-js';
+
 Amplify.configure(aws_exports);
 
 class App extends Component {
@@ -12,6 +16,11 @@ class App extends Component {
     info: null,
     name: "max",
   };
+
+  const [meetingResponse, setMeetingResponse] = useState()
+  const [attendeeResponse, setAttendeeResponse] = useState()
+  const [callCreated, setCallCreated] = useState(false)
+  const videoElement = useRef()
   
   /*
   constructor(props) {
@@ -62,6 +71,7 @@ class App extends Component {
             >
               Learn React
             </a>
+            <video ref={videoElement}></video>
           </header>
         </div>
       );
