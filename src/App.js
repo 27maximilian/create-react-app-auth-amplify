@@ -44,7 +44,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hey {this.state.name} edit <code>src/App.js</code> and save to reload.
+            Hey {this.state.info} edit <code>src/App.js</code> and save to reload.
           </p>
           <a
             className="App-link"
