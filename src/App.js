@@ -7,6 +7,8 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
 class App extends Component {
+  
+  /*
   constructor(props) {
     super(props);
     let info = Auth.currentUserInfo();
@@ -14,6 +16,7 @@ class App extends Component {
       name : "max" //info.username,
     } ;
   }
+  */
   
   render() {
     return (
