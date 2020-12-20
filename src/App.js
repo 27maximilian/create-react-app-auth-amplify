@@ -1,4 +1,4 @@
-import React, { Component, useRef, useState } from 'react';
+import React, { Component, useRef} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
@@ -15,11 +15,10 @@ class App extends Component {
   state = {
     info: null,
     name: "max",
+    response: null,
+    callCreated: false,
   };
 
-  [meetingResponse, setMeetingResponse] = useState()
-  [attendeeResponse, setAttendeeResponse] = useState()
-  [callCreated, setCallCreated] = useState(false)
   videoElement = useRef()
   
   /*
