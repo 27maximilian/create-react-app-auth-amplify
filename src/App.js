@@ -7,6 +7,11 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
 class App extends Component {
+  /*
+  state = {
+    info: null,
+  };
+  
   constructor(props) {
     super(props);
     // let info = Auth.currentUserInfo();
@@ -16,6 +21,7 @@ class App extends Component {
       name : username,
     } ;
   }
+  */
   
   /*
   componentDidMount() {
