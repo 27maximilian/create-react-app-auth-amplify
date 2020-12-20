@@ -11,17 +11,26 @@ class App extends Component {
     super(props);
     // let info = Auth.currentUserInfo();
     // console.log(info);
-    info.username = "max";
+    let username = "max";
     this.state = {
-      name : info.username,
+      name : username,
     } ;
   }
   
-  async componentDidMount() {
-     const info = await Auth.currentUserInfo()
-     console.log('Returned info: ', info)
-     this.setState({ info })
-   }
+  componentDidMount() {
+    this._asyncRequest = Auth.currentUserInfo().then(
+      info => {
+        this._asyncRequest = null;
+        this.setState({info});
+      }
+    );
+  }
+  
+  componentWillUnmount() {
+    if (this._asyncRequest) {
+      this._asyncRequest.cancel();
+    }
+  }
   
   render() {
     return (
