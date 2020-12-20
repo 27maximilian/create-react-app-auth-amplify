@@ -9,7 +9,7 @@ Amplify.configure(aws_exports);
 class App extends Component {
   constructor(props) {
     super(props);
-    let info = await Auth.currentUserInfo();
+    let info = Auth.currentUserInfo();
     this.state = {
       name : info.username,
     } ;
