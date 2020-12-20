@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     let info = Auth.currentUserInfo();
     this.state = {
-      name : info.username,
+      name : "max" //info.username,
     } ;
   }
   render() {
