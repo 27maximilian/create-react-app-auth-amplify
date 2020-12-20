@@ -5,48 +5,24 @@ import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
-
 class App extends Component {
-  /*
-  state = {
-    info: null,
-  };
-  
   constructor(props) {
     super(props);
-    // let info = Auth.currentUserInfo();
-    // console.log(info);
-    let username = "max";
+    let info = Auth.currentUserInfo();
+    console.log(info);
+    info.username = "max";
     this.state = {
-      name : username,
+      name : "max" //info.username,
+      name : info.username,
     } ;
   }
-  */
-  
-  /*
-  componentDidMount() {
-    this._asyncRequest = Auth.currentUserInfo().then(
-      info => {
-        this._asyncRequest = null;
-        this.setState({info});
-      }
-    );
-  }
-  
-  componentWillUnmount() {
-    if (this._asyncRequest) {
-      this._asyncRequest.cancel();
-    }
-  }
-  */
-  
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hey 1 {this.state.name} 2 {this.state.username} 3 {this.state.info.username} edit <code>src/App.js</code> and save to reload.
+            Hey {this.state.name} edit <code>src/App.js</code> and save to reload.
           </p>
           <a
             className="App-link"
@@ -61,5 +37,3 @@ class App extends Component {
     );
   }
 }
-
-export default withAuthenticator(App, true);
