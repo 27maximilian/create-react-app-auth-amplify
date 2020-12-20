@@ -5,17 +5,16 @@ import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
+
 class App extends Component {
   constructor(props) {
     super(props);
     let info = Auth.currentUserInfo();
-    console.log(info);
-    info.username = "max";
     this.state = {
       name : "max" //info.username,
-      name : info.username,
     } ;
   }
+  
   render() {
     return (
       <div className="App">
@@ -37,3 +36,5 @@ class App extends Component {
     );
   }
 }
+
+export default withAuthenticator(App, true);
