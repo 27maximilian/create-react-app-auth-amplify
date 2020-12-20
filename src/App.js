@@ -9,20 +9,27 @@ Amplify.configure(aws_exports);
 class App extends Component {
   constructor(props) {
     super(props);
-    let info = Auth.currentUserInfo();
-    console.log(info);
+    // let info = Auth.currentUserInfo();
+    // console.log(info);
     info.username = "max";
     this.state = {
       name : info.username,
     } ;
   }
+  
+  async componentDidMount() {
+     const info = await Auth.currentUserInfo()
+     console.log('Returned info: ', info)
+     this.setState({ info })
+   }
+  
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hey {this.state.name} edit <code>src/App.js</code> and save to reload.
+            Hey (1) {this.state.name} (2) {this.state.username} (3) {this.state.info.username} edit <code>src/App.js</code> and save to reload.
           </p>
           <a
             className="App-link"
