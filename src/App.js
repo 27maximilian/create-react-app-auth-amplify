@@ -22,6 +22,21 @@ class App extends Component {
     } ;
   }
   */
+
+  componentDidMount() {
+    this._asyncRequest = Auth.currentUserInfo().then(
+      info => {
+        this._asyncRequest = null;
+        this.setState({info});
+      }
+    );
+  }
+  
+  componentWillUnmount() {
+    if (this._asyncRequest) {
+      this._asyncRequest.cancel();
+    }
+  }
   
   render() {
     return (
