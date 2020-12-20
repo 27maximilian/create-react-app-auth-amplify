@@ -10,8 +10,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     let info = Auth.currentUserInfo();
+    console.log(info);
+    info.username = "max";
     this.state = {
-      name : "max" //info.username,
+      name : info.username,
     } ;
   }
   render() {
