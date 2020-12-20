@@ -8,6 +8,11 @@ Amplify.configure(aws_exports);
 
 class App extends Component {
   
+  state = {
+    info: null,
+    name: "max",
+  };
+  
   /*
   constructor(props) {
     super(props);
