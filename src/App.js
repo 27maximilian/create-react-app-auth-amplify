@@ -17,6 +17,7 @@ class App extends Component {
     } ;
   }
   
+  /*
   componentDidMount() {
     this._asyncRequest = Auth.currentUserInfo().then(
       info => {
@@ -31,6 +32,7 @@ class App extends Component {
       this._asyncRequest.cancel();
     }
   }
+  */
   
   render() {
     return (
